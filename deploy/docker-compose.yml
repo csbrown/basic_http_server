@@ -1,0 +1,23 @@
+version: '3.1'
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    volumes:
+      - ../my_app:/var/www
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+    depends_on:
+      - flask
+  flask:
+    build:
+      context: ..
+      dockerfile: ./deploy/Dockerfile
+    ports:
+      - 8000:8000
+    container_name: flask
+    command: gunicorn --bind 0.0.0.0:8000 --workers 4 "my_app:app"
+    volumes:
+      - ../my_app:/var/www
