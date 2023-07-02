@@ -1,0 +1,51 @@
+.img-cell {
+    width: 12vw; 
+    height: 12vw; 
+    display: inline-block; 
+    text-align: center;
+}
+.pic:hover{
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -ms-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  opacity: 1;
+  transform: scale(4);
+  -ms-transform: scale(4); /* IE 9 */
+  -webkit-transform: scale(4); /* Safari and Chrome */
+  z-index:2;
+  position: relative;
+}
+
+video:hover{
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -ms-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  opacity: 1;
+  transform-style: preserve-3d;
+  transform: scale(4);
+  -ms-transform: scale(4); /* IE 9 */
+  -webkit-transform: scale(4); /* Safari and Chrome */
+  z-index:2;
+  position: relative;
+}
+.vidcontainer {
+    position: relative;
+}
+.vidplay {
+    pointer-events: none;
+    visibility: visible;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    width: 20%;
+}
+.vidcontainer:hover .vidplay {
+    visibility:visible;
+}
+body {
+    margin: 15vw;
+}
